@@ -3,7 +3,7 @@ import React from "react";
 import Header from "../components/Header";
 import RoomieCard from "../components/RoomieCard";
 import FilterSidebar from "../components/FilterSidebar";
-import "./HomePage.css";
+import ".././styles/HomePage.css";
 
 const HomePage = () => {
   // Dummy data for the sake of example
