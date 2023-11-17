@@ -1,6 +1,6 @@
 // FilterSidebar.js
 import React from "react";
-import "./FilterSidebar.css";
+import ".././styles/FilterSidebar.css";
 
 const FilterSidebar = () => {
   return (
