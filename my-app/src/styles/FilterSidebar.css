@@ -2,11 +2,11 @@
 .filter-sidebar {
   width: 200px;
   /* Adjust the width as per your design */
-  background-color: #D8C3A5;
+  background-color: #d8c3a5;
   /* Darker beige for sidebar background */
   padding: 20px;
   box-sizing: border-box;
-  border-right: 1px solid #C0B0A0;
+  border-right: 1px solid #c0b0a0;
   /* Border color, adjust as needed */
 }
 
@@ -37,10 +37,10 @@
   width: 70%;
   /* Reduced width for input elements */
   padding: 8px;
-  border: 1px solid #A09080;
+  border: 1px solid #a09080;
   /* Lighter border color, adjust as needed */
   border-radius: 5px;
-  background-color: #EAE7DC;
+  background-color: #eae7dc;
   /* Lighter beige for input background */
   color: #333;
   /* Black for input text */

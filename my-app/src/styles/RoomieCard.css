@@ -1,7 +1,7 @@
 .roomie-card {
-  background-color: #D8C3A5;
+  background-color: #d8c3a5;
   /* Darker beige background for cards */
-  border: 1px solid #D8C3A5;
+  border: 1px solid #d8c3a5;
   /* Border color to match the card background */
   border-radius: 10px;
   padding: 20px;
@@ -27,7 +27,7 @@
   flex: 0 0 120px;
   /* Photo width and height */
   height: 120px;
-  background-color: #EAE7DC;
+  background-color: #eae7dc;
   /* Lighter beige for the photo placeholder */
   border-radius: 10px;
   /* Slightly rounded corners for the photo placeholder */
@@ -49,7 +49,7 @@
 }
 
 .roomie-score {
-  background-color: #EAE7DC;
+  background-color: #eae7dc;
   /* Lighter beige background for score */
   color: #333;
   /* Black text for score */
@@ -65,7 +65,7 @@
   font-weight: bold;
   position: relative;
   /* Needed for absolute positioning of the score text */
-  border: 3px solid #D8C3A5;
+  border: 3px solid #d8c3a5;
   /* Border color for the score circle */
 }
 

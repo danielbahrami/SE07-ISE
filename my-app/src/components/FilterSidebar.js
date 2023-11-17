@@ -1,6 +1,6 @@
 // FilterSidebar.js
-import React from 'react';
-import '../styles/FilterSidebar.css'; // Adjust the path if necessary
+import React from "react";
+import "../styles/FilterSidebar.css"; // Adjust the path if necessary
 
 const FilterSidebar = ({ onFilterChange }) => {
   return (
@@ -12,7 +12,12 @@ const FilterSidebar = ({ onFilterChange }) => {
       </div>
       <div className="filter-group">
         <label htmlFor="gender">Gender</label>
-        <select id="gender" name="gender" className="custom-select" onChange={onFilterChange}>
+        <select
+          id="gender"
+          name="gender"
+          className="custom-select"
+          onChange={onFilterChange}
+        >
           <option value="">Any</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
@@ -21,15 +26,30 @@ const FilterSidebar = ({ onFilterChange }) => {
       </div>
       <div className="filter-group">
         <label htmlFor="occupation">Occupation</label>
-        <input type="text" id="occupation" name="occupation" onChange={onFilterChange} />
+        <input
+          type="text"
+          id="occupation"
+          name="occupation"
+          onChange={onFilterChange}
+        />
       </div>
       <div className="filter-group">
         <label htmlFor="tidiness">Tidiness</label>
-        <input type="text" id="tidiness" name="tidiness" onChange={onFilterChange} />
+        <input
+          type="text"
+          id="tidiness"
+          name="tidiness"
+          onChange={onFilterChange}
+        />
       </div>
       <div className="filter-group">
         <label htmlFor="hobbies">Hobbies</label>
-        <input type="text" id="hobbies" name="hobbies" onChange={onFilterChange} />
+        <input
+          type="text"
+          id="hobbies"
+          name="hobbies"
+          onChange={onFilterChange}
+        />
       </div>
       {/* Add more filters as needed */}
     </aside>

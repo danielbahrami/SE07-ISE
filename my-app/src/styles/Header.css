@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #D8C3A5;
+  background-color: #d8c3a5;
   /* Header background color */
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
@@ -12,7 +12,7 @@
   font-size: 24px;
   color: #333;
   /* Black text for the logo */
-  font-family: 'Satisfy', cursive;
+  font-family: "Satisfy", cursive;
 }
 
 .header-icons button {

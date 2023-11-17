@@ -10,10 +10,17 @@ const Header = () => {
       <h1>RoomieMatch</h1>
       <div className="header-icons">
         <button>
-          <img src={enterIcon} alt="Enter" width="24" height="24" /> {/* Adjust width and height as needed */}
+          <img src={enterIcon} alt="Enter" width="24" height="24" />{" "}
+          {/* Adjust width and height as needed */}
         </button>
         <button>
-          <img src={userInterfaceIcon} alt="User Interface" width="24" height="24" /> {/* Adjust width and height as needed */}
+          <img
+            src={userInterfaceIcon}
+            alt="User Interface"
+            width="24"
+            height="24"
+          />{" "}
+          {/* Adjust width and height as needed */}
         </button>
       </div>
     </div>
