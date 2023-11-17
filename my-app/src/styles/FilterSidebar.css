@@ -1,9 +1,56 @@
+/* FilterSidebar.css */
 .filter-sidebar {
   width: 200px;
-  background-color: #fff;
+  /* Adjust the width as per your design */
+  background-color: #D8C3A5;
+  /* Darker beige for sidebar background */
   padding: 20px;
-  border-right: 1px solid #ddd;
-  margin-right: 20px;
+  box-sizing: border-box;
+  border-right: 1px solid #C0B0A0;
+  /* Border color, adjust as needed */
 }
 
-/* Add additional styles for filter elements */
+.filter-sidebar h2 {
+  color: #333;
+  /* Black for headings */
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  /* Adjust the font size as per your design */
+}
+
+.filter-group {
+  margin-bottom: 15px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  /* Black for label text */
+  font-size: 1rem;
+  /* Adjust the font size as per your design */
+}
+
+/* Set a smaller width for all input elements */
+.filter-group input,
+.filter-group .custom-select {
+  width: 70%;
+  /* Reduced width for input elements */
+  padding: 8px;
+  border: 1px solid #A09080;
+  /* Lighter border color, adjust as needed */
+  border-radius: 5px;
+  background-color: #EAE7DC;
+  /* Lighter beige for input background */
+  color: #333;
+  /* Black for input text */
+}
+
+/* Styling for buttons or additional filter controls can be added here */
+
+/* Specific styling for the gender dropdown */
+.filter-group .custom-select {
+  /* Set a specific width for the gender dropdown */
+  width: 100%;
+  /* You can adjust the width as needed */
+}

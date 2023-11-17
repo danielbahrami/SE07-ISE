@@ -3,13 +3,16 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: #D8C3A5;
+  /* Header background color */
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 .header h1 {
   font-size: 24px;
   color: #333;
+  /* Black text for the logo */
+  font-family: 'Satisfy', cursive;
 }
 
 .header-icons button {
@@ -17,4 +20,6 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
+  color: #333;
+  /* Black icons */
 }
