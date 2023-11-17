@@ -1,6 +1,6 @@
 // RoomieCard.js
 import React from "react";
-import "./RoomieCard.css";
+import ".././styles/RoomieCard.css";
 
 const RoomieCard = ({ roomie }) => {
   return (
