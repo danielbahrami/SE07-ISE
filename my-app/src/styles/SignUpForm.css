@@ -1,0 +1,42 @@
+.signup-form {
+    background-color: #F5F5F5; /* Adjust colors as needed */
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Elements stacked vertically */
+    align-items: center; /* Center align children horizontally */
+    gap: 10px; /* Reduced gap between form elements */
+    width: 100%; /* Full width of the container */
+    max-width: 500px; /* Maximum width of the form */
+    margin: auto; /* Center the form in the available space */
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Reduced gap between inputs */
+    width: 100%; /* Inputs take full width of form-group */
+  }
+  
+  .form-group label {
+    margin-bottom: 2px; /* Reduced space below labels */
+  }
+  
+  .form-group input {
+    padding: 10px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    width: 100%; /* Inputs take full width of form-group */
+  }
+  
+  .create-user-button {
+    padding: 10px 20px;
+    background-color: #D8C3A5; /* Button background color */
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: auto; /* Auto width based on content */
+    max-width: 200px; /* Max width of the button */
+    margin-top: 20px; /* Space above the button */
+  }

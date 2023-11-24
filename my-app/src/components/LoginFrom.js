@@ -6,12 +6,17 @@ import ".././styles/LoginForm.css"; // Make sure to create this CSS file for sty
 const LoginForm = () => {
   let navigate = useNavigate();
 
-  const handleLogin = () => {
+  const handleLogin = (event) => {
+    event.preventDefault();
     // Perform login logic here
     // ...
 
     // Redirect to the homepage upon successful login
     navigate("/home");
+  };
+
+  const handleSignUpClick = () => {
+    navigate('/signup'); // Navigate to the SignUpPage
   };
 
   return (
@@ -20,12 +25,12 @@ const LoginForm = () => {
         <img src="avatar-placeholder.png" alt="Profile" />
       </div>
       <div className="form-container">
-        <label htmlFor="email">Name or Email:</label>
+        <label htmlFor="email">Email:</label>
         <input
           type="text"
           id="email"
           name="email"
-          placeholder="name or email..."
+          placeholder="name"
         />
 
         <label htmlFor="password">Password:</label>
@@ -39,7 +44,7 @@ const LoginForm = () => {
         <button onClick={handleLogin} className="login-button">
           Login
         </button>
-        <button className="signup-button">Sign up</button>
+        <button type="button" onClick={handleSignUpClick} className="signup-button">Sign up</button>
       </div>
     </div>
   );
