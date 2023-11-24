@@ -1,0 +1,85 @@
+/* ProfileCard.css */
+.profile-card {
+  background-color: #d8c3a5; /* Darker beige background for cards */
+  border: 1px solid #d8c3a5; /* Border color to match the card background */
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space between picture and details */
+  align-items: center; /* Center items horizontally */
+  gap: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* 20 pixels from the top */
+  width: 50%; /* Fill about 50% of the screen width */
+  max-width: 400px; /* Optional max width */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+.profile-picture-container {
+  width: 180px; /* Larger photo width */
+  height: 180px; /* Larger photo height */
+  background-color: #eae7dc; /* Lighter beige for the photo placeholder */
+  border-radius: 90px; /* Fully rounded corners for the circle photo placeholder */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Space from the photo to the details */
+}
+
+.profile-info {
+  text-align: center;
+  width: 100%; /* Full width */
+}
+
+.profile-info h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px; /* Space between search area and budget */
+}
+
+.profile-info p {
+  margin-bottom: 4px;
+}
+
+/* Individual info items */
+.profile-info p {
+  margin-bottom: 4px;
+}
+
+.profile-bottom-info {
+  display: flex;
+  flex-direction: column; /* Stack info vertically */
+  width: 100%; /* Full width */
+  gap: 10px; /* Space between items */
+  margin-top: auto; /* Push to the bottom */
+}
+
+.profile-bottom-info p {
+  background-color: #eae7dc; /* Lighter beige background for details */
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  width: calc(100% - 16px); /* Width with padding */
+}
+/* Styles for the details within ProfileCard */
+.roomie-details {
+  flex-grow: 1;
+  color: #333;
+}
+/* Styles for the name, age, etc. */
+.roomie-name,
+.roomie-age,
+.roomie-occupation,
+.roomie-gender,
+.roomie-social,
+.roomie-tidiness,
+.roomie-hobbies,
+.roomie-pets {
+  margin-bottom: 10px;
+}
+/* Style for the budget */
+.roomie-budget {
+  color: #666;
+}

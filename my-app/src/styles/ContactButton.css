@@ -1,0 +1,11 @@
+/* ContactButton.css */
+.contact-button {
+  padding: 10px 20px;
+  background-color: #4caf50; /* Example button color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px; /* Space above the button */
+}

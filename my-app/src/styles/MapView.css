@@ -1,0 +1,8 @@
+/* MapView.css */
+.map-view {
+  width: 50%; /* Take up all available width */
+  height: 300px; /* Adjust height as needed */
+  background-color: #ddd; /* Placeholder color */
+  border: 1px solid #ccc; /* Placeholder border */
+  margin-bottom: 20px; /* Space below the map */
+}
