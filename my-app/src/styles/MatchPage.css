@@ -1,38 +1,38 @@
 /* MatchPage.css */
 .match-page {
-    flex-direction: row; /* Changed to row for side-by-side layout */
-    justify-content: center;
-    align-items: flex-start; /* Align items at the start of the page */
-    padding: 20px;
-    gap: 20px;
-    box-sizing: border-box;
-  }
-  
-  /* Adapted from HomePage.css content styles for consistency */
-  .match-content {
-    display: flex;
-    flex-direction: row; /* This ensures the children are side-by-side */
-    justify-content: center;
-    align-items: flex-start; /* Align items to the start of the flex container */
-    height: 100%; /* Take the full height */
-  }
-  
-  /* Style for the left side (ProfileCard) */
-  .left-side {
-    display: flex;
-    flex-direction: column;
-    width: 50%; /* 35% width as requested earlier */
-    gap: 20px;
-    align-items: center; /* Center align the items */
-  }
-  
-  /* Style for the right side (Additional Content) */
+  flex-direction: row; /* Changed to row for side-by-side layout */
+  justify-content: center;
+  align-items: flex-start; /* Align items at the start of the page */
+  padding: 20px;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+/* Adapted from HomePage.css content styles for consistency */
+.match-content {
+  display: flex;
+  flex-direction: row; /* This ensures the children are side-by-side */
+  justify-content: center;
+  align-items: flex-start; /* Align items to the start of the flex container */
+  height: 100%; /* Take the full height */
+}
+
+/* Style for the left side (ProfileCard) */
+.left-side {
+  display: flex;
+  flex-direction: column;
+  width: 50%; /* 35% width as requested earlier */
+  gap: 20px;
+  align-items: center; /* Center align the items */
+}
+
+/* Style for the right side (Additional Content) */
 .right-side {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center align the items for aesthetics */
-    justify-content: start; /* Align items to the start of the flex container */
-    width: 50%; /* Remaining width after the left side takes 35% */
-    padding: 20px;
-    /* Add any additional styling needed for right side layout */
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align the items for aesthetics */
+  justify-content: start; /* Align items to the start of the flex container */
+  width: 50%; /* Remaining width after the left side takes 35% */
+  padding: 20px;
+  /* Add any additional styling needed for right side layout */
+}
