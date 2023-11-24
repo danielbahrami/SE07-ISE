@@ -1,6 +1,6 @@
 // MapView.js
 import React from "react";
-import "../styles/MapView.css"; // Make sure to create this CSS file for styling
+import ".././styles/MapView.css"; // Make sure to create this CSS file for styling
 
 const MapView = () => {
   // Placeholder for the map component

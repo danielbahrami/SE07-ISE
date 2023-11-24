@@ -21,7 +21,7 @@
 .left-side {
   display: flex;
   flex-direction: column;
-  width: 50%; /* 35% width as requested earlier */
+  width: 50%; /* Adjust this to change the width of the left side */
   gap: 20px;
   align-items: center; /* Center align the items */
 }
@@ -32,7 +32,7 @@
   flex-direction: column;
   align-items: center; /* Center align the items for aesthetics */
   justify-content: start; /* Align items to the start of the flex container */
-  width: 50%; /* Remaining width after the left side takes 35% */
+  width: 50%; /* Adjust this to change the width of the right side */
   padding: 20px;
   /* Add any additional styling needed for right side layout */
 }
