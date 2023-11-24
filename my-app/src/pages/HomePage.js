@@ -3,10 +3,16 @@ import React from "react";
 import Header from "../components/Header";
 import RoomieCard from "../components/RoomieCard";
 import FilterSidebar from "../components/FilterSidebar";
+import { useNavigate } from 'react-router-dom';
 import ".././styles/HomePage.css";
 
 const HomePage = () => {
-  // Dummy data for the sake of example
+  const navigate = useNavigate();
+
+  const goToMatchPage = () => {
+    navigate('/match');
+};
+// Dummy data for the sake of example
   const roomies = [
     {
       id: 1,
@@ -35,6 +41,8 @@ const HomePage = () => {
             <RoomieCard key={roomie.id} roomie={roomie} />
           ))}
         </div>
+       {/* Other homepage content */}
+          <button onClick={goToMatchPage}>Go to Match Page</button>
       </div>
     </div>
   );
