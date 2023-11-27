@@ -16,7 +16,7 @@ const LoginForm = () => {
   };
 
   const handleSignUpClick = () => {
-    navigate('/signup'); // Navigate to the SignUpPage
+    navigate("/signup"); // Navigate to the SignUpPage
   };
 
   return (
@@ -26,12 +26,7 @@ const LoginForm = () => {
       </div>
       <div className="form-container">
         <label htmlFor="email">Email:</label>
-        <input
-          type="text"
-          id="email"
-          name="email"
-          placeholder="name"
-        />
+        <input type="text" id="email" name="email" placeholder="name" />
 
         <label htmlFor="password">Password:</label>
         <input
@@ -44,7 +39,13 @@ const LoginForm = () => {
         <button onClick={handleLogin} className="login-button">
           Login
         </button>
-        <button type="button" onClick={handleSignUpClick} className="signup-button">Sign up</button>
+        <button
+          type="button"
+          onClick={handleSignUpClick}
+          className="signup-button"
+        >
+          Sign up
+        </button>
       </div>
     </div>
   );
