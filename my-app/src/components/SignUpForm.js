@@ -1,7 +1,7 @@
 // SignUpForm.js
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../styles/SignUpForm.css'; // Ensure you have a corresponding CSS file
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "../styles/SignUpForm.css"; // Ensure you have a corresponding CSS file
 
 const SignUpForm = () => {
   let navigate = useNavigate();
@@ -11,12 +11,12 @@ const SignUpForm = () => {
     // Here you will handle the signup logic, like sending data to a backend server
 
     // After successful signup, redirect the user to the home page
-    navigate('/home');
+    navigate("/home");
   };
 
   return (
-    <div className='signup-page'>
-        <form className="signup-form" onSubmit={handleSignUp}>
+    <div className="signup-page">
+      <form className="signup-form" onSubmit={handleSignUp}>
         <div className="form-group">
           <label htmlFor="fullName">Full name:</label>
           <input type="text" id="fullName" name="fullName" required />
@@ -49,10 +49,12 @@ const SignUpForm = () => {
           <label htmlFor="password">Password:</label>
           <input type="password" id="password" name="password" required />
         </div>
-        <button type="submit" className="create-user-button">Create User</button>
+        <button type="submit" className="create-user-button">
+          Create User
+        </button>
       </form>
     </div>
-      );
+  );
 };
 
-      export default SignUpForm;
+export default SignUpForm;

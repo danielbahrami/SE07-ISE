@@ -2,7 +2,7 @@
 import React from "react";
 import HomePage from "./pages/HomePage";
 import MatchPage from "./pages/MatchPage";
-import SignUpPage from './pages/SignUpPage';
+import SignUpPage from "./pages/SignUpPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css"; // This is your global styles, if you have any
 import LoginPage from "./pages/LoginPage";
