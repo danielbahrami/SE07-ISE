@@ -6,6 +6,7 @@ import SignUpPage from "./pages/SignUpPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css"; // This is your global styles, if you have any
 import LoginPage from "./pages/LoginPage";
+import ProfilePage from './pages/ProfilePage';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/home" Component={HomePage} />
           <Route path="/match" Component={MatchPage} />
           <Route path="/signup" Component={SignUpPage} />
+          <Route path="/profile" Component={ProfilePage} />
         </Routes>
       </Router>
     </div>
