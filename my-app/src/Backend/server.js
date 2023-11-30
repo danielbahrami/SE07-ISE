@@ -1,16 +1,16 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const userRoutes = require('./routes/UserRoutes');
-const cors = require('cors');
+const express = require("express");
+const mongoose = require("mongoose");
+const userRoutes = require("./routes/UserRoutes");
+const cors = require("cors");
 
 const app = express();
 app.use(cors()); // This will enable CORS for all routes
 app.use(express.json()); // Middleware for parsing JSON bodies
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017', {
+mongoose.connect("mongodb://localhost:27017", {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 });
 // Use the userRoutes for all user-related endpoints
 app.use(userRoutes);

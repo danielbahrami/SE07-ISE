@@ -6,7 +6,7 @@ import SignUpPage from "./pages/SignUpPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css"; // This is your global styles, if you have any
 import LoginPage from "./pages/LoginPage";
-import ProfilePage from './pages/ProfilePage';
+import ProfilePage from "./pages/ProfilePage";
 
 const App = () => {
   return (

@@ -1,14 +1,14 @@
 import React from "react";
 import enterIcon from "../icons/enter.png";
 import userInterfaceIcon from "../icons/user-interface.png";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import ".././styles/Header.css";
 
 const Header = () => {
   let navigate = useNavigate();
 
   const goToProfile = () => {
-    navigate('/profile'); // This should match the route path you set for the ProfilePage
+    navigate("/profile"); // This should match the route path you set for the ProfilePage
   };
   return (
     <div className="header">

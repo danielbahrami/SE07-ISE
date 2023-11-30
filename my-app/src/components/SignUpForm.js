@@ -1,26 +1,25 @@
 // SignUpForm.js
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 import "../styles/SignUpForm.css"; // Ensure you have a corresponding CSS file
 
 const SignUpForm = () => {
   let navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    password: '',
-    gender: '',
-    age: '',
-    occupation: '',
-    tidiness: '',
-    pets: '',
-    searchArea: '',
-    hobbies: '',
-    socialInterests: '',
+    fullName: "",
+    email: "",
+    password: "",
+    gender: "",
+    age: "",
+    occupation: "",
+    tidiness: "",
+    pets: "",
+    searchArea: "",
+    hobbies: "",
+    socialInterests: "",
   });
-
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -30,11 +29,17 @@ const SignUpForm = () => {
     e.preventDefault();
     try {
       // Send the form data to the backend
-      const response = await axios.post('http://localhost:5000/signup', formData);
-      console.log('User created:', response.data);
+      const response = await axios.post(
+        "http://localhost:5000/signup",
+        formData
+      );
+      console.log("User created:", response.data);
       navigate("/home"); // Implement your success logic here (e.g., redirect to profile page)
     } catch (error) {
-      console.error('Error signing up:', error.response?.data?.message || error.message);
+      console.error(
+        "Error signing up:",
+        error.response?.data?.message || error.message
+      );
     }
   };
 
@@ -120,7 +125,7 @@ const SignUpForm = () => {
             placeholder="Social Interests"
           />
           <button type="submit">Sign Up</button>
-        </div >
+        </div>
       </form>
     </div>
   );
