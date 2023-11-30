@@ -1,0 +1,54 @@
+/* ProfilePage.css */
+.profile-page {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.user-details {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* ... additional styles ... */
+}
+
+.about-me-section {
+  margin-top: 20px;
+  background-color: #eae7dc; /* Light beige background */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Adjust based on your design needs */
+  gap: 20px; /* Adjust the gap between boxes */
+}
+
+.detail-item {
+  background-color: #fff; /* White background for detail items */
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.detail-item label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.detail-item input {
+  width: calc(100% - 20px); /* Full width minus padding */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

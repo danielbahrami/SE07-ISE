@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import ".././styles/LoginForm.css"; // Make sure to create this CSS file for styling
 
 const LoginForm = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleLogin = (event) => {
     event.preventDefault();

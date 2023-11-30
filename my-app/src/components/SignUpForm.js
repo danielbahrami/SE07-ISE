@@ -1,57 +1,131 @@
 // SignUpForm.js
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../styles/SignUpForm.css"; // Ensure you have a corresponding CSS file
 
 const SignUpForm = () => {
   let navigate = useNavigate();
 
-  const handleSignUp = (event) => {
-    event.preventDefault();
-    // Here you will handle the signup logic, like sending data to a backend server
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+    gender: "",
+    age: "",
+    occupation: "",
+    tidiness: "",
+    pets: "",
+    searchArea: "",
+    hobbies: "",
+    socialInterests: "",
+  });
 
-    // After successful signup, redirect the user to the home page
-    navigate("/home");
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // Send the form data to the backend
+      const response = await axios.post(
+        "http://localhost:5000/signup",
+        formData
+      );
+      console.log("User created:", response.data);
+      navigate("/home"); // Implement your success logic here (e.g., redirect to profile page)
+    } catch (error) {
+      console.error(
+        "Error signing up:",
+        error.response?.data?.message || error.message
+      );
+    }
   };
 
   return (
     <div className="signup-page">
-      <form className="signup-form" onSubmit={handleSignUp}>
+      <form className="signup-form" onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="fullName">Full name:</label>
-          <input type="text" id="fullName" name="fullName" required />
-
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-
-          <label htmlFor="occupation">Occupation:</label>
-          <input type="text" id="occupation" name="occupation" />
-
-          <label htmlFor="gender">Gender:</label>
-          <input type="text" id="gender" name="gender" />
-
-          <label htmlFor="age">Age:</label>
-          <input type="number" id="age" name="age" />
+          <input
+            type="text"
+            name="fullName"
+            value={formData.fullName}
+            onChange={handleChange}
+            placeholder="Full Name"
+          />
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email"
+          />
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            placeholder="Password"
+          />
+          <input
+            type="text"
+            name="gender"
+            value={formData.gender}
+            onChange={handleChange}
+            placeholder="Gender"
+          />
+          <input
+            type="number"
+            name="age"
+            value={formData.age}
+            onChange={handleChange}
+            placeholder="Age"
+          />
+          <input
+            type="text"
+            name="occupation"
+            value={formData.occupation}
+            onChange={handleChange}
+            placeholder="Occupation"
+          />
+          <input
+            type="text"
+            name="tidiness"
+            value={formData.tidiness}
+            onChange={handleChange}
+            placeholder="Tidiness"
+          />
+          <input
+            type="text"
+            name="pets"
+            value={formData.pets}
+            onChange={handleChange}
+            placeholder="Pets"
+          />
+          <input
+            type="text"
+            name="searchArea"
+            value={formData.searchArea}
+            onChange={handleChange}
+            placeholder="Search Area"
+          />
+          <input
+            type="text"
+            name="hobbies"
+            value={formData.hobbies}
+            onChange={handleChange}
+            placeholder="Hobbies"
+          />
+          <input
+            type="text"
+            name="socialInterests"
+            value={formData.socialInterests}
+            onChange={handleChange}
+            placeholder="Social Interests"
+          />
+          <button type="submit">Sign Up</button>
         </div>
-        <div className="form-group">
-          <label htmlFor="hobbies">Hobbies:</label>
-          <input type="text" id="hobbies" name="hobbies" />
-
-          <label htmlFor="pets">Pets:</label>
-          <input type="text" id="pets" name="pets" />
-
-          <label htmlFor="tidiness">Tidiness:</label>
-          <input type="text" id="tidiness" name="tidiness" />
-
-          <label htmlFor="socialInterests">Social interests:</label>
-          <input type="text" id="socialInterests" name="socialInterests" />
-
-          <label htmlFor="password">Password:</label>
-          <input type="password" id="password" name="password" required />
-        </div>
-        <button type="submit" className="create-user-button">
-          Create User
-        </button>
       </form>
     </div>
   );
