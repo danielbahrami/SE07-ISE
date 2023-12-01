@@ -15,6 +15,10 @@ const userProfileSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    passwordHash: {
+      type: String,
+      required: true
+    },
     email: {
       type: String,
       required: true,
