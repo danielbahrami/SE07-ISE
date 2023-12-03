@@ -33,12 +33,13 @@ const ProfilePage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.patch(`http://localhost:5000/user/${userId}`, userData);
-      setUserData(response.data);
-      // Handle response
-    } catch (error) {
+      const userId = localStorage.getItem('userId');
+      await axios.patch(`http://localhost:5000/user/${userId}`, userData);
+      // Handle successful update (show success message, etc.)
+  } catch (error) {
       console.error('Error updating profile:', error);
-    }
+      // Handle error (show error message, etc.)
+  }
   };
 
   if (!userData) {
