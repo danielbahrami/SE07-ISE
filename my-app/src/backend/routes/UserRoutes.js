@@ -47,10 +47,21 @@ router.post("/signup", async (req, res) => {
 });
 
 
-// PATCH /user/:userId - Update a user's profile
+// In userRoutes.js or similar
 router.patch('/user/:userId', async (req, res) => {
   try {
-      const updatedUser = await User.findByIdAndUpdate(req.params.userId, req.body, { new: true }).select('-passwordHash');
+      const { userId } = req.params;
+      const updateData = {
+          // Only include fields that are allowed to be updated
+          occupation: req.body.occupation,
+          tidiness: req.body.tidiness,
+          pets: req.body.pets,
+          searchArea: req.body.searchArea,
+          hobbies: req.body.hobbies,
+          socialInterests: req.body.socialInterests,
+      };
+
+      const updatedUser = await User.findByIdAndUpdate(userId, updateData, { new: true }).select('-passwordHash');
       if (!updatedUser) {
           return res.status(404).send('User not found');
       }
