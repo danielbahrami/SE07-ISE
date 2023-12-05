@@ -63,20 +63,12 @@ const ProfilePage = () => {
     // Proceed with the update request
     try {
       const response = await axios.patch(`http://localhost:5000/user/${userId}`, userData);
-      console.log('Update response:', response);
-
-      // Update localStorage with the new user data
-      localStorage.setItem('userData', JSON.stringify(response.data));
-
-      // Optionally, update state to reflect changes immediately
       setUserData(response.data);
-
-      // Handle successful update (e.g., show success message)
-  } catch (error) {
-      console.error('Error updating profile:', error.response ? error.response.data : error);
-      // Handle error
-  }
-};
+      // Handle response
+    } catch (error) {
+      console.error('Error updating profile:', error);
+    }
+  };
 
   if (!userData) {
     return <div>Loading...</div>;
