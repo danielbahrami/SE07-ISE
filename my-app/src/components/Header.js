@@ -10,8 +10,15 @@ const Header = () => {
   const goToProfile = () => {
     navigate("/profile"); // This should match the route path you set for the ProfilePage
   };
-  const handleBackClick = () => {
-    navigate(-1); // Go back to the previous page
+
+  const handleLogout = () => {
+    // Clear user data from localStorage
+    localStorage.removeItem('userData');
+
+    // If you have a backend session to clear, make an API request here
+
+    // Navigate to the login page or home page
+    navigate('/');
 };
 
   return (
@@ -20,7 +27,7 @@ const Header = () => {
       <h1>RoomieMatch</h1>
       </Link>
       <div className="header-icons">
-        <button onClick={handleBackClick}>
+        <button onClick={handleLogout}>
           <img src={enterIcon} alt="Enter" width="24" height="24" />{" "}
           {/* Adjust width and height as needed */}
         </button>

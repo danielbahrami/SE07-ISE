@@ -45,8 +45,8 @@ const LoginForm = ({ onLoginSuccess }) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit">Login</button>
-        </form>
+          <button type="submit" className="login-button">Login</button>
+          </form>
         <button
           type="button"
           onClick={handleSignUpClick}
