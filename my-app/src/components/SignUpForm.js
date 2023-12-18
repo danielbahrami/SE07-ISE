@@ -34,7 +34,7 @@ const SignUpForm = () => {
         formData
       );
       console.log("User created:", response.data);
-      navigate('/');; // Implement your success logic here (e.g., redirect to profile page)
+      navigate("/"); // Implement your success logic here (e.g., redirect to profile page)
     } catch (error) {
       console.error(
         "Error signing up:",

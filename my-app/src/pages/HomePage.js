@@ -1,5 +1,5 @@
 // HomePage.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import RoomieCard from "../components/RoomieCard";
 import FilterSidebar from "../components/FilterSidebar";
@@ -11,7 +11,7 @@ const HomePage = () => {
 
   useEffect(() => {
     // Fetch user data from localStorage
-    const storedData = localStorage.getItem('userData');
+    const storedData = localStorage.getItem("userData");
     if (storedData) {
       const parsedData = JSON.parse(storedData);
       setUserData(parsedData);
@@ -20,8 +20,8 @@ const HomePage = () => {
 
   const navigate = useNavigate();
   const handleCardClick = () => {
-    navigate('/match'); // Navigate to the match page
-};
+    navigate("/match"); // Navigate to the match page
+  };
   // Dummy data for the sake of example
   const roomies = [
     {
@@ -47,9 +47,15 @@ const HomePage = () => {
       <div className="content">
         <FilterSidebar />
         <div className="roomie-cards">
-          {userData && roomies.map(roomie => (
-            <RoomieCard key={roomie.id} roomie={roomie} userData={userData} onclick={handleCardClick} />
-          ))}
+          {userData &&
+            roomies.map((roomie) => (
+              <RoomieCard
+                key={roomie.id}
+                roomie={roomie}
+                userData={userData}
+                onclick={handleCardClick}
+              />
+            ))}
         </div>
       </div>
     </div>

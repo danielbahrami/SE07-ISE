@@ -81,9 +81,9 @@ const RoomieCard = ({ roomie, onClick }) => {
 
 const RoomieCards = () => {
   const navigate = useNavigate();
-const handleCardClick = () => {
-  navigate('/match'); // Navigate to the match page
-};
+  const handleCardClick = () => {
+    navigate("/match"); // Navigate to the match page
+  };
   return (
     <div className="roomie-cards">
       {roomieData.map((roomie) => (

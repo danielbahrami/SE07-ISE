@@ -13,18 +13,18 @@ const Header = () => {
 
   const handleLogout = () => {
     // Clear user data from localStorage
-    localStorage.removeItem('userData');
+    localStorage.removeItem("userData");
 
     // If you have a backend session to clear, make an API request here
 
     // Navigate to the login page or home page
-    navigate('/');
-};
+    navigate("/");
+  };
 
   return (
     <div className="header">
       <Link to="/home">
-      <h1>RoomieMatch</h1>
+        <h1>RoomieMatch</h1>
       </Link>
       <div className="header-icons">
         <button onClick={handleLogout}>

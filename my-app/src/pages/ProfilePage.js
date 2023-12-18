@@ -1,32 +1,33 @@
 // ProfilePage.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import "../styles/ProfilePage.css"; // Ensure you have a corresponding CSS file
-import axios from 'axios';
+import axios from "axios";
 
 const ProfilePage = () => {
   const [userId, setUserId] = useState();
   const [userData, setUserData] = useState({
-    occupation: '',
-    tidiness: '',
-    pets: '',
-    searchArea: '',
-    hobbies: '',
-    socialInterests: ''
+    occupation: "",
+    tidiness: "",
+    pets: "",
+    searchArea: "",
+    hobbies: "",
+    socialInterests: "",
   });
 
-    useEffect(() => {
-        // Fetch user data from localStorage
-        const storedUserData = JSON.parse(localStorage.getItem('userData'));
-        if (storedUserData) {
-            setUserData(storedUserData);
-        }  if (userId) {
-          // Fetch user profile data using userId
-      } else {
-          console.error('No user ID found');
-          // Handle the absence of userId
-      }
-    }, []);
+  useEffect(() => {
+    // Fetch user data from localStorage
+    const storedUserData = JSON.parse(localStorage.getItem("userData"));
+    if (storedUserData) {
+      setUserData(storedUserData);
+    }
+    if (userId) {
+      // Fetch user profile data using userId
+    } else {
+      console.error("No user ID found");
+      // Handle the absence of userId
+    }
+  }, []);
 
   const handleInputChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -34,48 +35,54 @@ const ProfilePage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submitting form...');
+    console.log("Submitting form...");
 
     // Retrieve stored data
-    const storedData = localStorage.getItem('userData');
+    const storedData = localStorage.getItem("userData");
     if (!storedData) {
-        console.error('No stored user data found');
-        return;  // Exit if no data found
+      console.error("No stored user data found");
+      return; // Exit if no data found
     }
 
     // Parse stored data
     let parsedData;
     try {
-        parsedData = JSON.parse(storedData);
+      parsedData = JSON.parse(storedData);
     } catch (error) {
-        console.error('Error parsing stored user data:', error);
-        return;  // Exit if parsing fails
+      console.error("Error parsing stored user data:", error);
+      return; // Exit if parsing fails
     }
 
     // Check if userId exists
     const userId = parsedData.userId;
     if (!userId) {
-        console.error('No user ID found in stored data');
-        return;  // Exit if no userId found
+      console.error("No user ID found in stored data");
+      return; // Exit if no userId found
     }
-    console.log('UserId:', userId);  // Log userId for confirmation
+    console.log("UserId:", userId); // Log userId for confirmation
 
     // Proceed with the update request
     try {
-      const response = await axios.patch(`http://localhost:5000/user/${userId}`, userData);
+      const response = await axios.patch(
+        `http://localhost:5000/user/${userId}`,
+        userData
+      );
       setUserData(response.data);
       // Handle response
-      console.log('Update response:', response);
+      console.log("Update response:", response);
       // Update localStorage with the new user data
-      localStorage.setItem('userData', JSON.stringify(response.data));
+      localStorage.setItem("userData", JSON.stringify(response.data));
       // Optionally, update state to reflect changes immediately
       setUserData(response.data);
       // Handle successful update (e.g., show success message)
-  } catch (error) {
-      console.error('Error updating profile:', error.response ? error.response.data : error);
+    } catch (error) {
+      console.error(
+        "Error updating profile:",
+        error.response ? error.response.data : error
+      );
       // Handle error
-  }
-};
+    }
+  };
 
   if (!userData) {
     return <div>Loading...</div>;

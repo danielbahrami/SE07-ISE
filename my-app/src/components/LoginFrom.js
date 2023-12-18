@@ -1,23 +1,26 @@
 // LoginForm.js
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ".././styles/LoginForm.css"; // Make sure to create this CSS file for styling
-import axios from 'axios';
+import axios from "axios";
 
 const LoginForm = ({ onLoginSuccess }) => {
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/login', { email, password });
+      const response = await axios.post("http://localhost:5000/login", {
+        email,
+        password,
+      });
       // Store user data in localStorage
-      localStorage.setItem('userData', JSON.stringify(response.data));
+      localStorage.setItem("userData", JSON.stringify(response.data));
       onLoginSuccess(); // Callback for successful login
     } catch (error) {
-      console.error('Login failed:', error);
+      console.error("Login failed:", error);
       // Handle login failure (e.g., show an error message)
     }
   };
@@ -45,8 +48,10 @@ const LoginForm = ({ onLoginSuccess }) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit" className="login-button">Login</button>
-          </form>
+          <button type="submit" className="login-button">
+            Login
+          </button>
+        </form>
         <button
           type="button"
           onClick={handleSignUpClick}
