@@ -1,5 +1,5 @@
 // HomePage.js
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import RoomieCard from "../components/RoomieCard";
 import FilterSidebar from "../components/FilterSidebar";
@@ -7,10 +7,20 @@ import { useNavigate } from "react-router-dom";
 import ".././styles/HomePage.css";
 
 const HomePage = () => {
-  const navigate = useNavigate();
+  const [userData, setUserData] = useState(null);
 
-  const goToMatchPage = () => {
-    navigate("/match");
+  useEffect(() => {
+    // Fetch user data from localStorage
+    const storedData = localStorage.getItem("userData");
+    if (storedData) {
+      const parsedData = JSON.parse(storedData);
+      setUserData(parsedData);
+    }
+  }, []);
+
+  const navigate = useNavigate();
+  const handleCardClick = () => {
+    navigate("/match"); // Navigate to the match page
   };
   // Dummy data for the sake of example
   const roomies = [
@@ -37,12 +47,16 @@ const HomePage = () => {
       <div className="content">
         <FilterSidebar />
         <div className="roomie-cards">
-          {roomies.map((roomie) => (
-            <RoomieCard key={roomie.id} roomie={roomie} />
-          ))}
+          {userData &&
+            roomies.map((roomie) => (
+              <RoomieCard
+                key={roomie.id}
+                roomie={roomie}
+                userData={userData}
+                onclick={handleCardClick}
+              />
+            ))}
         </div>
-        {/* Other homepage content */}
-        <button onClick={goToMatchPage}>Go to Match Page</button>
       </div>
     </div>
   );

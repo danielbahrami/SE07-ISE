@@ -1,18 +1,28 @@
 // LoginForm.js
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ".././styles/LoginForm.css"; // Make sure to create this CSS file for styling
+import axios from "axios";
 
-const LoginForm = () => {
+const LoginForm = ({ onLoginSuccess }) => {
   const navigate = useNavigate();
 
-  const handleLogin = (event) => {
-    event.preventDefault();
-    // Perform login logic here
-    // ...
-
-    // Redirect to the homepage upon successful login
-    navigate("/home");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:5000/login", {
+        email,
+        password,
+      });
+      // Store user data in localStorage
+      localStorage.setItem("userData", JSON.stringify(response.data));
+      onLoginSuccess(); // Callback for successful login
+    } catch (error) {
+      console.error("Login failed:", error);
+      // Handle login failure (e.g., show an error message)
+    }
   };
 
   const handleSignUpClick = () => {
@@ -25,20 +35,23 @@ const LoginForm = () => {
         <img src="avatar-placeholder.png" alt="Profile" />
       </div>
       <div className="form-container">
-        <label htmlFor="email">Email:</label>
-        <input type="text" id="email" name="email" placeholder="name" />
-
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="password..."
-        />
-
-        <button onClick={handleLogin} className="login-button">
-          Login
-        </button>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit" className="login-button">
+            Login
+          </button>
+        </form>
         <button
           type="button"
           onClick={handleSignUpClick}

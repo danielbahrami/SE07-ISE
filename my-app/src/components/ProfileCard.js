@@ -1,8 +1,14 @@
 import React from "react";
 import ".././styles/ProfileCard.css"; // Make sure to create this CSS file for styling
 
-const ProfileCard = () => {
+const ProfileCard = ({ userData }) => {
   // Dummy information to be displayed
+  const hobbies = Array.isArray(userData.hobbies)
+    ? userData.hobbies.join(", ")
+    : "Not specified";
+  const socialInterests = Array.isArray(userData.socialInterests)
+    ? userData.socialInterests.join(", ")
+    : "Not specified";
   const dummyData = {
     name: "John Doe",
     age: "25",
@@ -22,15 +28,15 @@ const ProfileCard = () => {
         {/* Placeholder for profile picture */}
       </div>
       <div className="profile-info">
-        <h3>Roomie</h3>
-        <p>Name: {dummyData.name}</p>
-        <p>Age: {dummyData.age}</p>
-        <p>Occupation: {dummyData.occupation}</p>
-        <p>Gender: {dummyData.gender}</p>
-        <p>Social Preference: {dummyData.socialPreference}</p>
-        <p>Tidiness: {dummyData.tidiness}</p>
-        <p>Hobbies: {dummyData.hobbies}</p>
-        <p>Pets: {dummyData.pets}</p>
+        <h2>{userData.name}</h2>
+        <p>Email: {userData.email}</p>
+        <p>Age: {userData.age}</p>
+        <p>Gender: {userData.gender}</p>
+        <p>Occupation: {userData.occupation}</p>
+        <p>Tidiness: {userData.tidiness}</p>
+        <p>Pets: {userData.pets}</p>
+        <p>Hobbies: {hobbies}</p>
+        <p>Social Interests: {socialInterests}</p>
         <div className="profile-bottom-info">
           <p>Search Area: {dummyData.searchArea}</p>
           <p>Budget: {dummyData.budget}</p>

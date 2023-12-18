@@ -16,6 +16,7 @@
 
 .avatar-container {
   margin-bottom: 20px;
+  align-self: center;
 }
 
 .avatar-container img {

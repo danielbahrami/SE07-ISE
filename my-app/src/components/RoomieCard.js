@@ -1,6 +1,7 @@
 // RoomieCard.js
 import React from "react";
 import ".././styles/RoomieCard.css";
+import { useNavigate } from "react-router-dom";
 
 const roomieData = [
   {
@@ -48,9 +49,9 @@ const roomieData = [
   // Add more fictive Roomie data as needed
 ];
 
-const RoomieCard = ({ roomie }) => {
+const RoomieCard = ({ roomie, onClick }) => {
   return (
-    <div className="roomie-card">
+    <div className="roomie-card" onClick={onClick}>
       <div className="roomie-details">
         <div className="roomie-name">Name: {roomie.name}</div>
         <div className="roomie-age">Age: {roomie.age}</div>
@@ -79,10 +80,14 @@ const RoomieCard = ({ roomie }) => {
 };
 
 const RoomieCards = () => {
+  const navigate = useNavigate();
+  const handleCardClick = () => {
+    navigate("/match"); // Navigate to the match page
+  };
   return (
     <div className="roomie-cards">
       {roomieData.map((roomie) => (
-        <RoomieCard key={roomie.id} roomie={roomie} />
+        <RoomieCard key={roomie.id} roomie={roomie} onClick={handleCardClick} />
       ))}
     </div>
   );
